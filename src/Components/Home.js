@@ -4,7 +4,7 @@ import clsx from 'clsx';
 import {BrowserRouter, Redirect,Link, Route,Switch} from 'react-router-dom'
 
 import AddStudent from './AddStudent'
-import ListStudent from './ListStudent'
+import ListStudent from './ListSchool'
 
 import { makeStyles, useTheme, fade } from '@material-ui/core/styles';
 import {
@@ -271,7 +271,7 @@ export default function Home(props) {
         <Divider />
         
         <List>
-          {['Add Student','List Students','List School','Trainer List','Digi Courses'].map((text, index) => (
+          {['Add Student','List School','List School','Trainer List','Digi Courses'].map((text, index) => (
             <Link to="/home/list">
             <ListItem selected={selectedMenu===index?true:false} 
             button key={text}

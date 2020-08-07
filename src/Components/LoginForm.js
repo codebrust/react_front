@@ -22,26 +22,29 @@ class LoginForm extends Component {
     handleSubmit=()=>{
 
         const params = new URLSearchParams();
-        params.append('username',this.state.username);
-        params.append('password',this.state.password);
-        this.setState({status:true})
+        params.append('Username',this.state.username);
+        params.append('Password',this.state.password);
+        var data = {
+            Username: this.state.username,
+            Password: this.state.password
+        }
+        // this.setState({status:true})
 
-        // axios.post('http://localhost:3010/api/login',params)
-        //   .then(response =>{
-        //       console.log(response);
-        //       this.setState({status:true})
-        //     alert(response.statusText);
-        //   })
-        //   .catch(error=>{
-        //       console.log(this.state.status);
-        //       if(error){
-        //         alert("Worng username or Password")
-        //       }
-        //   });   
+        axios.post('http://localhost:3008/api/login',data)
+          .then(response =>{
+              console.log({response});
+              this.setState({status:true})
+            alert(response.statusText);
+          })
+          .catch(error=>{
+              console.log({error});
+              if(error){
+                alert("Worng username or Password")
+              }
+          });   
     }
 
     handleUsernameChange(event){
-        console.log(event.target.value);
         this.setState({username: event.target.value});
     }
 

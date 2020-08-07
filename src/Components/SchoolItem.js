@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types'
 
 
-class PersonItem extends Component{
+class SchoolItem extends Component{
     getStyle = ()=>{
         return {
             backgroundColor:"#ddd",
@@ -23,13 +23,13 @@ class PersonItem extends Component{
     }
 
     render(){
-        console.log(this.props.person)
+        console.log(this.props.school)
         return (
             <div>
                 <p>
-            {this.props.person.person_id} 
-            {this.props.person.name} 
-            {this.props.person.fk_gender}
+            {this.props.school.Name} 
+            {this.props.school.Province} 
+            {this.props.school.District}
             </p>
             </div>
 
@@ -37,8 +37,8 @@ class PersonItem extends Component{
     }
 }
 
-PersonItem.propTypes = {
-    person : PropTypes.object.isRequired
+SchoolItem.propTypes = {
+    school : PropTypes.object.isRequired
 }
 
 // const itemStyle = {
@@ -47,4 +47,4 @@ PersonItem.propTypes = {
 //     padding: 8
 // }
 
-export default PersonItem
+export default SchoolItem
